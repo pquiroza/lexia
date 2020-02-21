@@ -8,7 +8,7 @@ import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-      
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -28,22 +28,22 @@ optionsModel: number[];
 
 
   constructor(private http: HttpClient) {
-    this.lex = "181.43.93.109"
+    this.lex = "190.101.192.149"
     this.palabras = []
     this.myOptions = [
-        { id: "baradit", name: 'Baradit' },
+
         {id: "Pinera",name: 'Piñera'},
-        {id:"Bachelet", name: 'Bachelet'},
-        {id: "Ossandon", name: 'Ossandon'},
-        {id: "JoseAKast", name:'JoseAKast'},
-        {id: "Lavin", name:'Lavin'},
-        {id: "Guillier", name:'Guillier'},
-        {id: "Pinochet", name:'Pinochet'},
-        {id: "Allende",name:'Allende'},
-        {id: "danieljadue",name:'Jadue'}
+        {id:"18 Octubre", name: '18 Octubre'},
+        {id: "Estallido Social", name: 'Estallido Social'},
+        {id: "Seguridad Ciudadana", name:'Seguridad Ciudadana'},
+        {id: "Pensiones", name:'Pensiones'},
+        {id: "Carabineros", name:'Carabineros'},
+        {id: "Plebiscito", name:'Plebiscito'},
+        {id: "Gobierno",name:'Gobierno'},
+        {id: "Medios",name:'Medios'}
     ];
 
-let dt = ["Pinera", "Bachelet"];
+let dt = ["Pinera", "Gobierno"];
 var ds = new Date();
 this.getdatosdias(ds.getMonth()+1,dt).then(datos =>{
   this.lineChartData =  {
