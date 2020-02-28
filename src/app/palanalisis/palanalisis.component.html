@@ -70,38 +70,7 @@
 
             </ul>
 
-            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-              <span>Saved reports</span>
-              <a class="d-flex align-items-center text-muted" href="#">
-                <span data-feather="plus-circle"></span>
-              </a>
-            </h6>
-            <ul class="nav flex-column mb-2">
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Current month
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Last quarter
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Social engagement
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  Year-end sale
-                </a>
-              </li>
-            </ul>
+
           </div>
         </nav>
 
@@ -112,15 +81,12 @@
               <div class="btn-group mr-2">
                 <input class="form-control w-100" [(ngModel)]="model.palabras" name="palabras" id="palabras" #palabras="ngModel" type="text" placeholder="Buscar Palabras" aria-label="Search">
 
-                <input class="form-control" placeholder="yyyy-mm-dd"
-                       name="fecha" id="fecha" [(ngModel)]="model.fecha" ngbDatepicker #d="ngbDatepicker" (blur)="cambioFecha()">
+
                 <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
-                    <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
-                  </button>
+
                 </div>
               </div>
-              <button class="btn btn-sm btn-outline-primary" (click)="reportePalabras()">Ver Reporte Mensual</button>
+              <button class="btn btn-sm btn-outline-primary" (click)="reportePalabras()">Buscar Conceptos</button>
 
             </div>
           </div>
@@ -129,18 +95,15 @@
           <div *ngIf="enproceso">
             <h2>EN PROCESO, FAVOR ESPERE</h2>
           </div>
-          <div *ngIf="enproceso==false">
-            <google-chart [data]="palabramesChart" class="my-4 w-100" width="900" height="380"></google-chart>
-            <google-chart [data]="palabrahorasChart" class="my-4 w-100" width="900" height="380"></google-chart>
 
 
 <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
    <ngb-panel title="Simple">
      <ng-template ngbPanelContent>
                     <ul class="list-group">
-                    <li *ngFor="let f of frases" class="list-group-item d-flex justify-content-between align-items-center">
-                      {{f.frase}}
-                      <span class="badge badge-primary badge-pill">{{f.contador}}</span>
+                    <li *ngFor="let f of frases" color="danger" class="list-group-item d-flex justify-content-between align-items-center">
+                      {{f._id}}
+                      <span class="badge badge-primary badge-pill">{{f.total}}</span>
                     </li>
                   </ul>
                   </ng-template>
@@ -149,17 +112,11 @@
 
 
 
-                <google-chart [data]="lineChartData2" class="my-4 w-100" width="900" height="380"></google-chart>
-
-    <google-chart [data]="circularChart" class="my-4 w-100" width="900" height="380"></google-chart>
 
 
 
 
 
-
-
-          </div>
 
 
         </main>

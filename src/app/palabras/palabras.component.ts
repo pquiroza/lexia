@@ -20,17 +20,18 @@ export class PalabrasComponent implements OnInit {
 model: any = {};
 datos: any;
   constructor(private http: HttpClient) {
-      this.lex = "181.43.93.109"  
+      this.lex = "190.101.192.149"
     this.myOptions = [
 
-                      {id: "Pinera",name: 'Piñera'},
-                      {id:"Bachelet", name: 'Bachelet'},
-                      {id: "Ossandon", name: 'Ossandon'},
-                      {id: "JoseAKast", name:'JoseAKast'},
-                      {id: "Lavin", name:'Lavin'},
-                      {id: "Guillier", name:'Guillier'},
-                      {id: "Pinochet", name:'Pinochet'},
-                      {id: "Allende",name:'Allende'}
+      {id: "Pinera",name: 'Piñera'},
+      {id:"18 Octubre", name: '18 Octubre'},
+      {id: "Estallido Social", name: 'Estallido Social'},
+      {id: "Seguridad Ciudadana", name:'Seguridad Ciudadana'},
+      {id: "Pensiones", name:'Pensiones'},
+      {id: "Carabineros", name:'Carabineros'},
+      {id: "Plebiscito", name:'Plebiscito'},
+      {id: "Gobierno",name:'Gobierno'},
+      {id: "Medios",name:'Medios'}
     ];
 
     this.datos = [];
@@ -53,7 +54,7 @@ reporteMapa(){
     this.geoChart = {
       chartType: 'GeoChart',
       dataTable:  this.datos,
-      apiKey: 'AIzaSyCziung57MnFDCP4B5M2S-MBo_qu6VvKe4',
+      apiKey: 'AIzaSyBtsfIjavCuuMkxKCOcz3BE00q-Np5f2X4',
       options:{
           'region': 'CL',
          'displayMode':'markers',
@@ -74,7 +75,7 @@ mapaAmerica(){
       this.geoChart = {
         chartType: 'GeoChart',
         dataTable:  data,
-        apiKey: 'AIzaSyCziung57MnFDCP4B5M2S-MBo_qu6VvKe4',
+        apiKey: 'AIzaSyBtsfIjavCuuMkxKCOcz3BE00q-Np5f2X4',
         options:{
             'region': '005',
            'displayMode':'markers',
@@ -91,7 +92,7 @@ mapaChile(){
   this.geoChart = {
     chartType: 'GeoChart',
     dataTable:  this.datos,
-    apiKey: 'AIzaSyCziung57MnFDCP4B5M2S-MBo_qu6VvKe4',
+    apiKey: 'AIzaSyBtsfIjavCuuMkxKCOcz3BE00q-Np5f2X4',
     options:{
         'region': 'CL',
        'displayMode':'markers',
@@ -108,7 +109,7 @@ this.getGeo(mes,dia,conceptos).then(data => {
   this.geoChart = {
     chartType: 'GeoChart',
     dataTable:  data,
-    apiKey: 'AIzaSyCziung57MnFDCP4B5M2S-MBo_qu6VvKe4',
+    apiKey: 'AIzaSyBtsfIjavCuuMkxKCOcz3BE00q-Np5f2X4',
     options:{
 
        'displayMode':'markers',
@@ -130,7 +131,7 @@ this.getGeo(mes,dia,conceptos).then(data => {
 
       })
         this.http.get('http://'+this.lex+'/lexia/api/getgeodia?mes='+mes+'&dia='+dia+'&'+q).subscribe(data => {
-
+          console.log(data)
           datosgeo.push(header);
           data.forEach(d => {
             datosgeo.push(d);

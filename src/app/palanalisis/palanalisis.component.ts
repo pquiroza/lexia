@@ -16,23 +16,30 @@ import 'rxjs/add/operator/map';
 export class PalanalisisComponent implements OnInit {
 model: any = {};
 frases: any;
+public lex: any;
 public palabramesChart: any;
 public palabrahorasChart: any;
-public enproceso: any; 
+public enproceso: any;
   constructor(private http: HttpClient) {
-
+    this.lex = "190.101.192.149"
 this.frases = []
    }
 
 
   reportePalabras(){
     console.log(this.model.palabras)
-    console.log(this.model.fecha.day)
-    console.log(this.model.fecha.month)
-    let mes = this.model.fecha.month;
-    let dia = this.model.fecha.day;
+
+
     let palabra = this.model.palabras;
-    this.http.get('http://181.43.88.7/lexia/api/reportediapalabra?mes='+mes+'&dia='+dia+'&palabra='+palabra).subscribe(data => {
+    this.http.get('http://'+this.lex+'/lexia/api/reportepalabrasnew?palabra='+palabra).subscribe(data => {
+      console.log(data)
+      data.forEach(d => {
+        console.log(d._id)
+
+        this.frases.push(d);
+      })
+      console.log(this.frases)
+      /*
       console.log(data)
       if (data.length===1){
         this.enproceso = true;
@@ -84,6 +91,7 @@ this.frases = []
 
 
 }
+*/
   })
 
 

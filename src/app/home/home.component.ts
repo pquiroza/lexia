@@ -26,7 +26,7 @@ model: any = {};
 optionsModel: number[];
     myOptions: IMultiSelectOption[];
 
-
+  
   constructor(private http: HttpClient) {
     this.lex = "190.101.192.149"
     this.palabras = []
