@@ -15,6 +15,7 @@ export class PalabrasComponent implements OnInit {
     public lex: any;
 
   optionsModel: number[];
+  
   public geoChart: any;
   myOptions: IMultiSelectOption[];
 model: any = {};
@@ -54,7 +55,7 @@ reporteMapa(){
     this.geoChart = {
       chartType: 'GeoChart',
       dataTable:  this.datos,
-      apiKey: 'AIzaSyBtsfIjavCuuMkxKCOcz3BE00q-Np5f2X4',
+      apiKey: '',
       options:{
           'region': 'CL',
          'displayMode':'markers',
@@ -75,7 +76,7 @@ mapaAmerica(){
       this.geoChart = {
         chartType: 'GeoChart',
         dataTable:  data,
-        apiKey: 'AIzaSyBtsfIjavCuuMkxKCOcz3BE00q-Np5f2X4',
+        apiKey: '',
         options:{
             'region': '005',
            'displayMode':'markers',
@@ -92,7 +93,7 @@ mapaChile(){
   this.geoChart = {
     chartType: 'GeoChart',
     dataTable:  this.datos,
-    apiKey: 'AIzaSyBtsfIjavCuuMkxKCOcz3BE00q-Np5f2X4',
+    apiKey: '',
     options:{
         'region': 'CL',
        'displayMode':'markers',
@@ -109,7 +110,7 @@ this.getGeo(mes,dia,conceptos).then(data => {
   this.geoChart = {
     chartType: 'GeoChart',
     dataTable:  data,
-    apiKey: 'AIzaSyBtsfIjavCuuMkxKCOcz3BE00q-Np5f2X4',
+    apiKey: '',
     options:{
 
        'displayMode':'markers',
