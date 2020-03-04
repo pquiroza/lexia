@@ -98,10 +98,10 @@
 
 
 <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-   <ngb-panel title="Simple">
+   <ngb-panel title="Resultado Búsqueda de concepto: {{palabra}} en los temas definidos:">
      <ng-template ngbPanelContent>
                     <ul class="list-group">
-                    <li *ngFor="let f of frases" color="danger" class="list-group-item d-flex justify-content-between align-items-center">
+                    <li *ngFor="let f of frases" color="danger" class="list-group-item d-flex justify-content-between align-items-center" (click)="detalleConcepto(f._id)">
                       {{f._id}}
                       <span class="badge badge-primary badge-pill">{{f.total}}</span>
                     </li>

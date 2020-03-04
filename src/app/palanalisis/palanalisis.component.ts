@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 import { NgbInputDatepicker } from '@ng-bootstrap/ng-bootstrap';
 import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
@@ -20,18 +21,20 @@ public lex: any;
 public palabramesChart: any;
 public palabrahorasChart: any;
 public enproceso: any;
-  constructor(private http: HttpClient) {
+public palabra: any;
+  constructor(private http: HttpClient, private router: Router) {
     this.lex = "190.101.192.149"
 this.frases = []
    }
 
 
   reportePalabras(){
+    this.frases = []
     console.log(this.model.palabras)
 
 
-    let palabra = this.model.palabras;
-    this.http.get('http://'+this.lex+'/lexia/api/reportepalabrasnew?palabra='+palabra).subscribe(data => {
+    this.palabra = this.model.palabras;
+    this.http.get('http://'+this.lex+'/lexia/api/reportepalabrasnew?palabra='+this.palabra).subscribe(data => {
       console.log(data)
       data.forEach(d => {
         console.log(d._id)
@@ -95,6 +98,12 @@ this.frases = []
   })
 
 
+
+  }
+
+  detalleConcepto(frase){
+    this.router.navigate(['detallefrase'],{queryParams:{idfrase:frase,palabra:this.palabra}});
+    console.log(frase)
 
   }
 

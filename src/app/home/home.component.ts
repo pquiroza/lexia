@@ -8,7 +8,7 @@ import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-
+  
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -26,7 +26,7 @@ model: any = {};
 optionsModel: number[];
     myOptions: IMultiSelectOption[];
 
-  
+
   constructor(private http: HttpClient) {
     this.lex = "190.101.192.149"
     this.palabras = []

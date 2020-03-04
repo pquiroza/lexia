@@ -11,6 +11,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 import { PalabrasComponent } from './palabras/palabras.component';
 import { PalanalisisComponent } from './palanalisis/palanalisis.component';
+import { DetallefraseComponent } from './detallefrase/detallefrase.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { PalanalisisComponent } from './palanalisis/palanalisis.component';
     AppComponent,
     HomeComponent,
     PalabrasComponent,
-    PalanalisisComponent
+    PalanalisisComponent,
+    DetallefraseComponent
   ],
   imports: [
     BrowserModule,
